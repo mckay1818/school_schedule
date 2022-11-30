@@ -17,3 +17,25 @@ def test_initial_state():
     assert "art" in student1.classes
     assert "English" in student1.classes
     assert "Spanish" in student1.classes
+
+
+def test_add_class():
+    #Arrange
+    english = "English"
+    student1 = Student(
+            "Samara", 
+            "junior", 
+            [ 
+                "Pre-Calc", 
+                "English III", 
+                "World History", 
+                "Gym", 
+                "Chemistry", 
+                "Music Composition" 
+            ]
+        )
+    #Act
+    result = student1.add_class(english)
+    
+    #Assert
+    assert english in student1.classes
