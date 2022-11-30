@@ -39,3 +39,43 @@ def test_add_class():
     
     #Assert
     assert english in student1.classes
+
+def test_valid_input_in_get_num_classes():
+    #Arrange
+    student1 = Student(
+            "Samara", 
+            "junior", 
+            [ 
+                "Pre-Calc", 
+                "English III", 
+                "World History", 
+                "Gym", 
+                "Chemistry", 
+                "Music Composition" 
+            ]
+        )
+    #Act
+    result = student1.get_num_classes()
+
+    #Assert
+    assert result == 6
+
+
+def test_summary_with_valid_input():
+    #Arrange
+    student1 = Student(
+            "Samara", 
+            "junior", 
+            [ 
+                "Pre-Calc", 
+                "English III", 
+                "World History", 
+                "Gym", 
+                "Chemistry", 
+                "Music Composition" 
+            ]
+        )   
+    #Act
+    result = student1.summary()
+    #Assert
+    assert result == "Samara is a junior enrolled in 6 classes"
